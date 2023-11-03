@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Neobis_iOS_StopWatchn" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kaa-RG-7Ak">
+                                <rect key="frame" x="77" y="225" width="239" height="81"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="81" id="STn-F0-nO0"/>
+                                    <constraint firstAttribute="width" constant="239" id="cUa-DC-5Vg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="66"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ZYl-Ut-7qu">
+                                <rect key="frame" x="131" y="152" width="131" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="3nQ-GB-Zlj"/>
+                                    <constraint firstAttribute="width" constant="131" id="43j-Ha-8Cd"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Timer"/>
+                                    <segment title="StopWatch"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentedControlValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="csF-D5-4lY"/>
+                                </connections>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dge-4c-5Kx">
+                                <rect key="frame" x="45" y="547" width="99" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="99" id="MJI-QY-MWY"/>
+                                    <constraint firstAttribute="height" constant="75" id="dd3-kS-DD9"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" image="stop.circle.fill" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="50"/>
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" red="1" green="0.80784313730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="stopButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2BV-l9-hsj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7dC-Zo-edW">
+                                <rect key="frame" x="147" y="547" width="99" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="1d8-k0-uoE"/>
+                                    <constraint firstAttribute="width" constant="99" id="M04-Oz-L81"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Button" image="pause.circle.fill" catalog="system"/>
+                                <buttonConfiguration key="configuration" style="gray" image="pause.circle.fill" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="50"/>
+                                    <attributedString key="attributedTitle"/>
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" red="1" green="0.80784313730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="pauseButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DKJ-ih-mpR"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hpr-pw-8lM">
+                                <rect key="frame" x="116.66666666666669" y="50" width="160" height="94"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="94" id="IsQ-JT-aKm"/>
+                                    <constraint firstAttribute="width" constant="160" id="nHw-Dr-Qfq"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="caC-Lf-5ny">
+                                <rect key="frame" x="258" y="550" width="99" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="3HU-bF-flB"/>
+                                    <constraint firstAttribute="width" constant="99" id="jzC-Tg-Rim"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" image="restart.circle.fill" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="50"/>
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" red="1" green="0.80784313730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="startButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XuT-dc-baR"/>
+                                </connections>
+                            </button>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GEH-0U-3Je">
+                                <rect key="frame" x="11" y="276" width="371" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="q7w-Cd-mCe"/>
+                                    <constraint firstAttribute="width" constant="371" id="uI5-cW-FEq"/>
+                                </constraints>
+                            </pickerView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                        <color key="tintColor" red="1" green="0.80784313730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="GEH-0U-3Je" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="14w-MJ-whd"/>
+                            <constraint firstItem="7dC-Zo-edW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="F8I-mo-lvz"/>
+                            <constraint firstItem="Hpr-pw-8lM" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-329" id="HST-FH-0ul"/>
+                            <constraint firstItem="GEH-0U-3Je" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="OR0-YI-qQS"/>
+                            <constraint firstItem="7dC-Zo-edW" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="158.5" id="Pva-S2-7pm"/>
+                            <constraint firstItem="dge-4c-5Kx" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="158.5" id="RR9-s4-PEs"/>
+                            <constraint firstItem="caC-Lf-5ny" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="111" id="RYs-vY-zhv"/>
+                            <constraint firstItem="dge-4c-5Kx" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" constant="-102" id="WeG-jJ-Uej"/>
+                            <constraint firstItem="ZYl-Ut-7qu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cHf-4T-ION"/>
+                            <constraint firstItem="Kaa-RG-7Ak" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-160.5" id="eq5-3b-j9O"/>
+                            <constraint firstItem="Hpr-pw-8lM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kby-CZ-9zc"/>
+                            <constraint firstItem="ZYl-Ut-7qu" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-258.5" id="sEu-qw-Xpt"/>
+                            <constraint firstItem="Kaa-RG-7Ak" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tGb-Bk-AK7"/>
+                            <constraint firstItem="caC-Lf-5ny" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="161.5" id="zP2-pA-oie"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="image" destination="Hpr-pw-8lM" id="aez-UY-83A"/>
+                        <outlet property="pauseButton" destination="7dC-Zo-edW" id="dl2-FQ-FC8"/>
+                        <outlet property="segmentedController" destination="ZYl-Ut-7qu" id="LqA-i4-6NC"/>
+                        <outlet property="startButton" destination="caC-Lf-5ny" id="nqV-tC-k4E"/>
+                        <outlet property="stopButton" destination="dge-4c-5Kx" id="dZX-xD-5tF"/>
+                        <outlet property="timerLabel" destination="Kaa-RG-7Ak" id="2Fu-Uy-Vts"/>
+                        <outlet property="timerPicker" destination="GEH-0U-3Je" id="RWd-hk-Zd7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="46.564885496183201" y="3.5211267605633805"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="pause.circle.fill" catalog="system" width="128" height="123"/>
+        <image name="restart.circle.fill" catalog="system" width="128" height="123"/>
+        <image name="stop.circle.fill" catalog="system" width="128" height="123"/>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
